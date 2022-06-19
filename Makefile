@@ -3,15 +3,20 @@ SOURCE= \
 	hello.java
 
 TARGET= HelloWorld
+PATHLIB=$CLASSPATH:/~/Java-Hello-World/libs
 
 DEBUG= -g
 
 all: compile run
 
-compile:
+lib:
+	export CLASSPATH=$(PATHLIB)
+
+compile: 
+    
 	$(JCC) $(DEBUG) $(SOURCE)
 
-run:
+run: 
 	java $(TARGET)
 
 
